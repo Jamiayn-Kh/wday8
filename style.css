@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+section{
+    position: absolute;
+    width: 800px;
+    height: 500px;
+
+    border-radius: 30px;
+    overflow: hidden;
+    animation: animate5 6s linear forwards;
+    animation-delay: 7s;
+}
+@keyframes animate5{
+    0%{
+        background: none;
+        box-shadow: none;
+    }
+    50%{
+        background: radial-gradient(#fff, #ff4c89 89%);
+        box-shadow: none;
+    }
+    100%{
+        background: radial-gradient(#fff, #ff4c89 89%);
+        box-shadow: 0 0 10px #d10737,0 0 50px #d10737;
+    }
+}
+
+div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div:nth-child(1){
+    width: 50%;
+    background: #fff;
+    border-radius: 0 50% 0 0;
+}
+div:nth-child(1) h1 h2{
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+div:nth-child(1) h1{
+    font-size: 500px;
+    color: #ff4577;
+    animation: animate 3s linear forwards;
+}
+
+@keyframes animate{
+    0%, 100%{
+        transform: rotateY(90deg);
+    }
+    100%{
+        transform: rotateY(180deg);
+    }
+}
+div:nth-child(1) h2 {
+    margin-left: -160px;
+    font-size: 20px;
+    opacity: 0;
+    transform: translateY(90px);
+    color: #d10737;
+    animation: animate2 2s linear forwards;
+    animation-delay:3s ;
+    
+ }
+ @keyframes animate2{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+div:nth-child(2){
+    background: none;
+    transform: translateX(13%);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 50px;
+}
+div:nth-child(2) h1 h2{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+div:nth-child(2) h2{
+    opacity: 0;
+    color: #d2113f;
+    font-size: 40px;
+    transform: translateY(-20px);
+    animation: aniamte3 2s linear forwards;
+    animation-delay: 5s;
+}
+@keyframes aniamte3{
+    0%{
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+}
+div:nth-child(2) h1{
+    opacity: 0;
+    color: #d10737;
+    font-size: 30px;
+    transform: translateY(20px);
+    animation: animate4 2s linear forwards;
+    animation-delay: 5s;
+}
+@keyframes animate4{
+    0%{
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(20px);
+    }
+}
+
+

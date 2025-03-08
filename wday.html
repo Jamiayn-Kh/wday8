@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нэр оруулах</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffb6c1;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .name-input-container {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 12px 2px;
+            margin: 20px 0;
+            border: 2px solid #ff4081;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            outline: none;
+            text-align: center;
+        }
+        
+        .submit-btn {
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .submit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="nameInputPage" class="name-input-container">
+            <h1>НЭРЭЭ ОРУУЛААРАЙ</h1>
+            <input type="text" id="nameInput" class="input-field" placeholder="Нэрээ оруулах">
+            <button id="submitBtn" class="submit-btn">ДАРАХ</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            const name = document.getElementById('nameInput').value.trim();
+            if (name) {
+                // Store the name and redirect to next.html
+                localStorage.setItem('userName', name);
+                window.location.href = 'next.html';
+            } else {
+                alert('Нэрээ оруулна уу!');
+            }
+        });
+
+        document.getElementById('nameInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('submitBtn').click();
+            }
+        });
+    </script>
+</body>
+</html>
